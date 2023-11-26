@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ToDoList
 //
-//  Created by User on 26.11.2023.
+//  Created by Ilya Lotnik on 26.11.2023.
 //
 
 import UIKit
@@ -10,13 +10,10 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        TokenManager.shared.setup()
+        User.shared.setup()
 
-        requestForNotificcation()
-        setBadge()
-        // Override point for customization after application launch.
         return true
     }
 
