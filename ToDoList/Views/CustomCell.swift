@@ -16,11 +16,11 @@ class CustomCell: UITableViewCell {
         
         let formatter = DateFormatter()
 
-        formatter.dateFormat = "dd MMMM yyyy г. в HH:mm"
-        formatter.locale = Locale(identifier: "ru_RU")
+        formatter.dateFormat = Constants.dateFormat
+        formatter.locale = Locale(identifier: Constants.locale)
         
         let isoDateFormatter = ISO8601DateFormatter()
-        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 10800)
+        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: Constants.secondsFromGMT)
         isoDateFormatter.formatOptions = [
             .withFullDate,
             .withFullTime,

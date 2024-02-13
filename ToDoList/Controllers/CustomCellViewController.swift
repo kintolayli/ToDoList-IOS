@@ -19,7 +19,7 @@ class CustomCellViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18, weight: .light)
-        label.text = "Здесь пока ничего нет.\n Создайте свою первую запись!"
+        label.text = Constants.TodoDoesNotExistLiteral
         return label
     }()
     
@@ -203,7 +203,7 @@ extension CustomCellViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc private func didTapAddItem() {
-        AlertManager.addNewItemAlert(on: self, titleButton1: "Отменить", titleButton2: "Добавить", titleAlert: "Новая запись", oldTodoName: "") { strings in
+        AlertManager.addNewItemAlert(on: self, titleButton1: Constants.cancelLiteral, titleButton2: Constants.addLiteral, titleAlert: Constants.newRecordLiteral, oldTodoName: "") { strings in
             let newItem = strings[0]
             if newItem != "" {
                 let nameItem = AddNewTodoUserRequest(name: newItem)
@@ -237,7 +237,7 @@ extension CustomCellViewController: UITableViewDelegate, UITableViewDataSource {
         feedbackGeneratorHeavy.prepare()
         feedbackGeneratorHeavy.impactOccurred()
         
-        AlertManager.addNewItemAlert(on: self, titleButton1: "Отменить", titleButton2: "Сохранить", titleAlert: "Редактировать запись", oldTodoName: oldTodoName) { strings in
+        AlertManager.addNewItemAlert(on: self, titleButton1: Constants.cancelLiteral, titleButton2: Constants.saveLiteral, titleAlert: Constants.editRecordLiteral, oldTodoName: oldTodoName) { strings in
             let newItem = strings[0]
             if newItem != "" {
                 let nameItem = AddNewTodoUserRequest(name: newItem)

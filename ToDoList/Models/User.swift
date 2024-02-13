@@ -21,9 +21,7 @@ struct User {
         setup()
     }
     
-    private func saveDataToUserDefaults() {
-        // Сохранение данных пользователя
-        
+    private func saveUserData() {
         UserDefaults.standard.set(username, forKey: "username")
         UserDefaults.standard.set(password, forKey: "password")
         UserDefaults.standard.set(email, forKey: "email")
@@ -36,7 +34,7 @@ struct User {
         if self.email == nil {
             self.email = inputEmail
         }
-        saveDataToUserDefaults()
+        saveUserData()
     }
     
     mutating func setup() {

@@ -11,9 +11,9 @@ class ForgorPasswordController: UIViewController {
 
     // MARK: - UI Components
     
-    private let headerView = AuthHeaderView(title: "Забыли пароль?", subTitle: "Сбросьте ваш пароль")
+    private let headerView = AuthHeaderView(title: Constants.resetPasswordHeaderTitle, subTitle: Constants.resetPasswordHeaderSubTitle)
     private let emailField = CustomTextField(fieldType: .email)
-    private let resetPasswordButton = CustomButton(title: "Сбросить пароль", hasBackground: true, fontSize: .big)
+    private let resetPasswordButton = CustomButton(title: Constants.resetPasswordButtonTitle, hasBackground: true, fontSize: .big)
         
         
     // MARK: - Lifecycle

@@ -12,13 +12,13 @@ class AlertManager {
     
     private static func showOneButtonAlert(on vc: UIViewController, title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: Constants.okLiteral, style: .default, handler: nil))
         DispatchQueue.main.async { vc.present(alert, animated: true) }
     }
     
     private static func showOneButtonAlertWithCompletion(on vc: UIViewController, title: String, message: String?, completion: @escaping (Bool) -> Void ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: Constants.okLiteral, style: .default, handler: nil))
         DispatchQueue.main.async { vc.present(alert, animated: true) }
     }
     
@@ -79,17 +79,17 @@ extension AlertManager {
     
     public static func showLogoutConfirmation(on vc: UIViewController, completion: @escaping (Bool) -> Void) {
         
-        let button1 = UIAlertAction(title: "Нет", style: .cancel) { _ in completion(false) }
-        let button2 = UIAlertAction(title: "Да", style: .destructive) { _ in
+        let button1 = UIAlertAction(title: Constants.noLiteral, style: .cancel) { _ in completion(false) }
+        let button2 = UIAlertAction(title: Constants.yesLiteral, style: .destructive) { _ in
             completion(true)
         }
-        self.showTwoButtonAlert(on: vc, title: "Подтверждение выхода", message: "Вы действительно хотите выйти?", button1: button1, button2: button2)
+        self.showTwoButtonAlert(on: vc, title: Constants.logoutConfirmationTitleLiteral, message: Constants.logoutConfirmationMessageLiteral, button1: button1, button2: button2)
     }
     
     public static func showEditOrDeleteConfirmation(on vc: UIViewController, titleCell: String, messageCell: String, completion: @escaping (Bool) -> Void) {
         
-        let button1 = UIAlertAction(title: "Изменить", style: .cancel) { _ in completion(false) }
-        let button2 = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+        let button1 = UIAlertAction(title: Constants.changeLiteral, style: .cancel) { _ in completion(false) }
+        let button2 = UIAlertAction(title: Constants.deleteLiteral, style: .destructive) { _ in
             completion(true)
         }
         self.showTwoButtonAlert(on: vc, title: titleCell, message: messageCell, button1: button1, button2: button2)
@@ -101,15 +101,15 @@ extension AlertManager {
 extension AlertManager {
         
     public static func showInvalidEmailAlert(on vc: UIViewController) {
-        self.showOneButtonAlert(on: vc, title: "Неправильный email", message: "Введите корректный email.")
+        self.showOneButtonAlert(on: vc, title: Constants.invalidEmailTitleLiteral, message: Constants.invalidEmailMessageLiteral)
     }
     
     public static func showInvalidPasswordAlert(on vc: UIViewController) {
-        self.showOneButtonAlert(on: vc, title: "Неправильный пароль", message: "Введите корректный пароль")
+        self.showOneButtonAlert(on: vc, title: Constants.invalidPasswordTitleLiteral , message: Constants.invalidPasswordMessageLiteral)
     }
     
     public static func showInvalidUsernameAlert(on vc: UIViewController) {
-        self.showOneButtonAlert(on: vc, title: "Неправильное имя пользователя", message: "Введите корректное имя пользователя")
+        self.showOneButtonAlert(on: vc, title: Constants.invalidUsernameTitleLiteral, message: Constants.invalidUsernameMessageLiteral )
     }
 }
 
@@ -118,11 +118,11 @@ extension AlertManager {
 extension AlertManager {
     
     public static func showRegistrationErrorAlert(on vc: UIViewController) {
-        self.showOneButtonAlert(on: vc, title: "Ошибка при регистрации пользователя", message: nil)
+        self.showOneButtonAlert(on: vc, title: Constants.registrationErrorTitleLiteral , message: nil)
     }
     
     public static func showRegistrationErrorAlert(on vc: UIViewController, with error: String) {
-        self.showOneButtonAlert(on: vc, title: "Ошибка при регистрации пользователя", message: "\(error)")
+        self.showOneButtonAlert(on: vc, title: Constants.registrationErrorTitleLiteral, message: "\(error)")
     }
     
 }
@@ -132,15 +132,15 @@ extension AlertManager {
 extension AlertManager {
     
     public static func showUserDoesNotExist(on vc: UIViewController, completion: @escaping (Bool) -> Void) {
-        self.showOneButtonAlertWithCompletion(on: vc, title: "Ошибка входа", message: "Такого пользователя не существует", completion: { _ in })
+        self.showOneButtonAlertWithCompletion(on: vc, title: Constants.logInErrorTitleLiteral, message: Constants.logInErrorMessageLiteral, completion: { _ in })
     }
     
     public static func showSignInErrorAlert(on vc: UIViewController) {
-        self.showOneButtonAlert(on: vc, title: "Ошибка входа", message: nil)
+        self.showOneButtonAlert(on: vc, title: Constants.logInErrorTitleLiteral, message: nil)
     }
     
     public static func showSignInErrorAlert(on vc: UIViewController, with error: String) {
-        self.showOneButtonAlert(on: vc, title: "Ошибка входа", message: "\(error)")
+        self.showOneButtonAlert(on: vc, title: Constants.logInErrorTitleLiteral, message: "\(error)")
     }
 }
 
@@ -149,10 +149,10 @@ extension AlertManager {
 extension AlertManager {
     
     public static func showPasswordResetSent(on vc: UIViewController) {
-        self.showOneButtonAlert(on: vc, title: "Сброс пароля", message: "Ссылка для сброса пароля была отправлена.")
+        self.showOneButtonAlert(on: vc, title: Constants.resetPasswordTitleLiteral, message: Constants.resetPasswordMessageTitleLiteral)
     }
     
     public static func showErrorSendingPasswordReset(on vc: UIViewController, with error: Error) {
-        self.showOneButtonAlert(on: vc, title: "Ошибка сброса пароля", message: "\(error.localizedDescription)")
+        self.showOneButtonAlert(on: vc, title: Constants.resetPasswordTitleLiteral, message: "\(error.localizedDescription)")
     }
 }

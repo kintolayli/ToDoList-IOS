@@ -10,23 +10,23 @@ import UIKit
 class RegisterController: UIViewController {
     
     // MARK: - UI Components
-    private let headerView = AuthHeaderView(title: "Регистрация", subTitle: "Создать учетную запись")
+    private let headerView = AuthHeaderView(title: Constants.registrationHeaderTitle, subTitle: Constants.registrationHeaderSubTitle)
     
     private let usernameField = CustomTextField(fieldType: .username)
     private let emailField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
     
-    private let signUpButton = CustomButton(title: "Создать", hasBackground: true, fontSize: .big)
-    private let signInButton = CustomButton(title: "Уже есть учетная запись? Войдите.", fontSize: .med)
+    private let signUpButton = CustomButton(title: Constants.registrationSignUpButtonTitle, hasBackground: true, fontSize: .big)
+    private let signInButton = CustomButton(title: Constants.registrationSignInButtonTitle, fontSize: .med)
     
     private let termsTextView: UITextView = {
         
         
-        let attributedString = NSMutableAttributedString(string: "Создавая учетную запись, вы соглашаетесь с нашими Положениями и условиями и подтверждаете, что ознакомились с нашей Политикой конфиденциальности.")
+        let attributedString = NSMutableAttributedString(string: Constants.registrationTermsTextViewLiteral)
         
-        attributedString.addAttribute(.link, value: "terms://termsAndConditions", range: (attributedString.string as NSString).range(of: "Положениями и условиями"))
+        attributedString.addAttribute(.link, value: Constants.registrationTermsTextViewTermsAndConditionsLinkLiteral, range: (attributedString.string as NSString).range(of: Constants.registrationTermsTextViewTermsAndConditionsLinkPositionLiteral))
         
-        attributedString.addAttribute(.link, value: "privacy://privacyPolicy", range: (attributedString.string as NSString).range(of: "Политикой конфиденциальности"))
+        attributedString.addAttribute(.link, value: Constants.registrationTermsTextViewPrivacyPolicyLinkLiteral, range: (attributedString.string as NSString).range(of: Constants.registrationTermsTextViewPrivacyPolicyLinkPositionLiteral))
         
         let tv = UITextView()
         tv.linkTextAttributes = [.foregroundColor: UIColor.systemBlue]
@@ -200,10 +200,10 @@ class RegisterController: UIViewController {
 extension RegisterController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        if URL.scheme == "terms" {
-            self.showWebViewerController(with: "https://policies.google.com/terms?hl=ru")
-        } else if URL.scheme == "privacy" {
-            self.showWebViewerController(with: "https://policies.google.com/privacy?hl=ru")
+        if URL.scheme == Constants.registrationTermsTextViewTermsAndConditionsURLScheme {
+            self.showWebViewerController(with: Constants.registrationTermsTextViewTermsAndConditionsURL)
+        } else if URL.scheme == Constants.registrationTermsTextViewPrivacyPolicyURLScheme {
+            self.showWebViewerController(with: Constants.registrationTermsTextViewPrivacyPolicyURL)
         }
         
         return true

@@ -20,7 +20,7 @@
 		8ABA5AB92B757530006FA6CB /* ServerResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A922B757158006FA6CB /* ServerResponses.swift */; };
 		8ABA5ABD2B757530006FA6CB /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8122C12B154812003B0D72 /* TodoItem.swift */; };
 		8ABA5ABE2B757530006FA6CB /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A912B757158006FA6CB /* UserRequest.swift */; };
-		8ABA5AC02B757543006FA6CB /* ForgorPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A9C2B757272006FA6CB /* ForgorPasswordController.swift */; };
+		8ABA5AC02B757543006FA6CB /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A9C2B757272006FA6CB /* ForgotPasswordController.swift */; };
 		8ABA5AC12B757543006FA6CB /* WebViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A9E2B757272006FA6CB /* WebViewerController.swift */; };
 		8ABA5AC22B757543006FA6CB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A9B2B757272006FA6CB /* LoginController.swift */; };
 		8ABA5AC32B757543006FA6CB /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA5A9D2B757272006FA6CB /* RegisterController.swift */; };
@@ -43,7 +43,7 @@
 		8ABA5A912B757158006FA6CB /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		8ABA5A922B757158006FA6CB /* ServerResponses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponses.swift; sourceTree = "<group>"; };
 		8ABA5A9B2B757272006FA6CB /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		8ABA5A9C2B757272006FA6CB /* ForgorPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordController.swift; sourceTree = "<group>"; };
+		8ABA5A9C2B757272006FA6CB /* ForgotPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		8ABA5A9D2B757272006FA6CB /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		8ABA5A9E2B757272006FA6CB /* WebViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewerController.swift; sourceTree = "<group>"; };
 		8ABA5AA52B7572E9006FA6CB /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				8ACBE8712B76D94E0013BC36 /* CustomCellViewController.swift */,
 				8ABA5A9B2B757272006FA6CB /* LoginController.swift */,
 				8ABA5A9D2B757272006FA6CB /* RegisterController.swift */,
-				8ABA5A9C2B757272006FA6CB /* ForgorPasswordController.swift */,
+				8ABA5A9C2B757272006FA6CB /* ForgotPasswordController.swift */,
 				8ABA5A9E2B757272006FA6CB /* WebViewerController.swift */,
 			);
 			path = Controllers;
@@ -242,7 +242,7 @@
 				8ABA5AB92B757530006FA6CB /* ServerResponses.swift in Sources */,
 				8ACBE8702B76D9160013BC36 /* CustomCell.swift in Sources */,
 				8ABA5AB42B757526006FA6CB /* TokenManager.swift in Sources */,
-				8ABA5AC02B757543006FA6CB /* ForgorPasswordController.swift in Sources */,
+				8ABA5AC02B757543006FA6CB /* ForgotPasswordController.swift in Sources */,
 				CEC760472B1391D900BA694C /* SceneDelegate.swift in Sources */,
 				8ABA5AB72B757530006FA6CB /* User.swift in Sources */,
 			);

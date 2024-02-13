@@ -19,8 +19,8 @@ func formatServerResponseToString(stringArray: [String]) -> String {
 
 enum ServiceError: Error {
     case serverError(String)
-    case unknown(String = "Случилась неизвестная ошибка.")
-    case decodingError(String = "Ошибка во время загрузки данных.")
+    case unknown(String = Constants.unknownErrorLiteral)
+    case decodingError(String = Constants.dowloadingDataErrorLiteral)
 }
 
 class AuthService {

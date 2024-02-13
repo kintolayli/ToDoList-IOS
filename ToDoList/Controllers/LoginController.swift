@@ -11,14 +11,14 @@ class LoginController: UIViewController {
 
     
     // MARK: - UI Components
-    private let headerView = AuthHeaderView(title: "Вход", subTitle: "Войдите в свою учетную запись")
+    private let headerView = AuthHeaderView(title: Constants.logInHeaderTitle, subTitle: Constants.logInHeaderSubTitle)
 
     private let usernameField = CustomTextField(fieldType: .username)
     private let passwordField = CustomTextField(fieldType: .password)
     
-    private let signInButton = CustomButton(title: "Войти", hasBackground: true, fontSize: .big)
-    private let newUserButton = CustomButton(title: "...или сначала создайте ее.", fontSize: .med)
-    private let forgotPasswordButton = CustomButton(title: "Забыли пароль?", fontSize: .small)
+    private let signInButton = CustomButton(title: Constants.logInSignInButtonTitle, hasBackground: true, fontSize: .big)
+    private let newUserButton = CustomButton(title: Constants.logInNewUserButtonTitle, fontSize: .med)
+    private let forgotPasswordButton = CustomButton(title: Constants.logInForgotPasswordButtonTitle, fontSize: .small)
     
     
     // MARK: - Lifecycle
