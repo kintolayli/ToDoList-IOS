@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     public func checkAuthentication() {
         DispatchQueue.main.async { [weak self] in
-            if User.shared.isAccessAllowed {
+            if TokenManager.shared.isTokenExist {
                 self?.goToController(with: CustomCellViewController())
             } else {
                 self?.goToController(with: LoginController())

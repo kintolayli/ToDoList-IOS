@@ -37,6 +37,8 @@ class CustomCellViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemBackground
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
         tableView.allowsSelection = true
         tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         return tableView
@@ -186,7 +188,14 @@ extension CustomCellViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        let lengthOneLine = 44
+        let currentTodo = todoElements[indexPath.row]
+        let content = currentTodo.name
+        let numberOfLines = content.count / lengthOneLine
+        let baseHeight: CGFloat = 65
+        let additionalHeightPerLine: CGFloat = 18
+
+        return baseHeight + CGFloat(numberOfLines - 1) * additionalHeightPerLine
     }
 
     @objc private func didTapLogout() {
